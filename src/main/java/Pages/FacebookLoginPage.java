@@ -50,7 +50,7 @@ public class FacebookLoginPage {
 
 	public void enterPassword(String password) {
 
-		driver.findElement(txt_password).sendKeys("Abc@123456");
+		driver.findElement(txt_password).sendKeys("Abc@12345");
 	}
 
 
@@ -74,7 +74,7 @@ public class FacebookLoginPage {
 		driver.findElement(txt_username).sendKeys("chaubeys123456@gmail.com");
 			
 			
-			driver.findElement(txt_password).sendKeys("Abc@123456");
+			driver.findElement(txt_password).sendKeys("Abc@12345");
 			driver.findElement(btn_signin).sendKeys(Keys.RETURN);
 	
 		}

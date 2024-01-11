@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import Pages.FacebookLoginPage;
 
@@ -14,15 +17,20 @@ public class FacebookLogin {
 	
 	static FacebookLoginPage Facebook;
 	
-	
-	public static void main(String[] args) {
+	@BeforeTest
+	public void FacebookLogin(){
 		
 		String projectPath = System.getProperty("user.dir");
 //		System.out.println("Project path is : "+projectPath);
 		
 		System.setProperty("webdriver.chrome.driver", projectPath+"/drivers/chromedriver.exe");
+	}
 
-		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\shivamchoubey\\eclipse-workspace\\Jenkins\\drivers\\chromedriver.exe");
+		
+	
+	//System.setProperty("webdriver.chrome.driver", "C:\\Users\\shivamchoubey\\eclipse-workspace\\Jenkins\\drivers\\chromedriver.exe");
+@Test
+	public void loginpage() {
 		WebDriver driver = new ChromeDriver();
 		Facebook= new FacebookLoginPage(driver);
 		
@@ -38,7 +46,7 @@ public class FacebookLogin {
 //		driver.findElement(By.id("pass")).sendKeys("Abc@123456");
 //		driver.findElement(By.id("loginbutton")).click();
 	}
-	
+	@AfterTest
 	public void teardown() {
 		//System.out.println("Inside Login - browser is close");
 
